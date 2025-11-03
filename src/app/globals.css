@@ -1,26 +1,301 @@
+
+
+
+/* ---------------------------------------------------- */
+/* 🧩 Tailwind & Animations */
+/* ---------------------------------------------------- */
 @import "tailwindcss";
+@import "tw-animate-css";
+/* @plugin 'lightswind/plugin'; */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Dark variant for Tailwind */
+@custom-variant dark (&:is(.dark *));
 
+/* ---------------------------------------------------- */
+/* 🎨 THEME VARIABLES (Inline Custom Properties) */
+/* ---------------------------------------------------- */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ---------------------------------------------------- */
+/* 🌈 Base Colors & Theme Tokens */
+/* ---------------------------------------------------- */
+:root {
+  /* Tailwind OKLCH Theme Tokens */
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Project-Specific Legacy Colors */
+  --white: #fff;
+  --light-brown: #e1dfdd;
+  --ash: #86868b;
+  --blue: #455ce9;
+  --light-ash: #c0c4c91f;
+  --brown: #29231c;
+  --dark-blue: #2437a7;
+  --white-alpha: rgba(255, 255, 255, 0.1);
+  --color-white: #ffffff;
+  --red: #ff0000;
+  --green: rgb(16, 133, 16);
+  --dark-radial-gradient: radial-gradient(farthest-side at 50% 50%, #2a2b2a, transparent);
+  --work-linear-gradient: linear-gradient(to right, rgba(255, 255, 255, 0.15), transparent);
+  --pink: #f0666b;
+  --blog-accent: #f0666b;
+  --light-blue: #bddefd;
+  --max-width: 1280px;
+  --mini-desktop-max-width: 1024px;
+
+  /* Z-Index Layers */
+  --z-index-nav-backdrop: 800;
+  --z-index-navbtn: 900;
+  --z-index-loader: 1000;
+  --z-index-nav-logo: 1003;
+  --z-index-banner: 1;
+  --z-index-content: 3;
+  --z-index-modal: 600;
+  --z-index-scroll-to-top: 500;
+}
+
+/* ---------------------------------------------------- */
+/* 🌙 Dark Mode Overrides */
+/* ---------------------------------------------------- */
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+}
+
+/* ---------------------------------------------------- */
+/* 🖋 Fonts */
+/* ---------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Quivert&family=Reaktif&display=swap');
+
+@font-face {
+  font-family: 'Reaktif';
+  src: url('/fonts/Reaktif-Book.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Qualy';
+  src: url('/fonts/Qualy Bold.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'goodly';
+  src: url('/fonts/goodly.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "sf-pro-bold";
+  src: url("/fonts/sf-pro/SFPRODISPLAYBOLD.OTF");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "sf-pro-medium";
+  src: url("/fonts/sf-pro/SFPRODISPLAYMEDIUM.OTF");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "sf-pro-regular";
+  src: url("/fonts/sf-pro/SFPRODISPLAYREGULAR.OTF");
+  font-display: swap;
+}
+
+/* ---------------------------------------------------- */
+/* 🧱 Global Resets & Typography */
+/* ---------------------------------------------------- */
+html {
+  font-size: 82.5%;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* html {
+  scroll-behavior: smooth;
+  transition: opacity 0.3s ease-in-out;
+} */
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "sf-pro-regular", SF Pro Display, Helvetica, Arial, sans-serif;
+  background: var(--background);
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
+*::selection {
+  background: var(--light-brown);
+  color: var(--black);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "sf-pro-bold";
+}
+
+/* ---------------------------------------------------- */
+/* 💫 Animations */
+/* ---------------------------------------------------- */
+.fade-in {
+  animation: fadeIn 0.1ms ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes typewriter {
+  0% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 0; }
 }
+
+.animate-typewriter {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriter 4s steps(15) infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.animate-blink {
+  display: inline-block;
+  margin-left: 2px;
+  width: 10px;
+  animation: blink 1s step-start infinite;
+}
+
+@theme inline {
+  --animate-move: move 5s linear infinite;
+  @keyframes move {
+    0% { transform: translateX(-200px); }
+    100% { transform: translateX(200px); }
+  }
+}
+
+/* ---------------------------------------------------- */
+/* 🖱 Cursor & Scrollbars */
+/* ---------------------------------------------------- */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body, button, a, div {
+  cursor: url('/image/cursor.png') 4 4, auto;
+}
+
+.item, a {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
