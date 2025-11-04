@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import { useState, useEffect, useRef } from "react";
 import { FaGithub, FaCode, FaPalette, FaTimes } from "react-icons/fa";
-import { PlaceholdersAndVanishInput } from "@/components/ui/placeholders-and-vanish-input";
+// import { PlaceholdersAndVanishInput } from "@/components/ui/placeholders-and-vanish-input";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BadgeButton from "@/components/ui/badge-button";
@@ -277,7 +277,7 @@ export default function ProjectZone() {
 
       {/* Search Bar */}
       <div className="w-full max-w-3xl mb-8" ref={searchRef}>
-        <PlaceholdersAndVanishInput
+        {/* <PlaceholdersAndVanishInput
           placeholders={[
             `Search in ${activeSection}`,
             "Type project name...",
@@ -285,7 +285,7 @@ export default function ProjectZone() {
           ]}
           onChange={(e) => setSearchQuery(e.target.value)}
           onSubmit={(e) => e.preventDefault()}
-        />
+        /> */}
       </div>
 
       {/* Filter Buttons */}
