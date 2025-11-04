@@ -4,19 +4,19 @@ import TECH_STACKS from "@/constants/tech-stacks";
 
 
 import prodeus1 from "../../public/image/profile.jpg";
-import prodeus2 from "../../public/image/p3.jpg";
-import prodeus3 from "../../public/image/p3.jpg";
-import prodeus4 from "../../public/image/p3.jpg";
-import prodeus5 from "../../public/image/p3.jpg";
-import cadmils from "../../public/image/p3.jpg";
-import medic1 from "../../public/image/p3.jpg";
-import medic2 from "../../public/image/p3.jpg";
-import medic3 from "../../public/image/p3.jpg";
-import lattice1 from "../../public/image/p3.jpg";
-import lattice2 from "../../public/image/p3.jpg";
-import dprod from "../../public/image/p3.jpg";
-import weather1 from "../../public/image/p3.jpg";
-import weather2 from "../../public/image/p3.jpg";
+import prodeus2 from "../../public/image/profile.jpg";
+import prodeus3 from "../../public/image/profile.jpg";
+import prodeus4 from "../../public/image/profile.jpg";
+import prodeus5 from "../../public/image/profile.jpg";
+import cadmils from "../../public/image/profile.jpg";
+import medic1 from "../../public/image/profile.jpg";
+import medic2 from "../../public/image/profile.jpg";
+import medic3 from "../../public/image/profile.jpg";
+import lattice1 from "../../public/image/profile.jpg";
+import lattice2 from "../../public/image/profile.jpg";
+import dprod from "../../public/image/profile.jpg";
+import weather1 from "../../public/image/profile.jpg";
+import weather2 from "../../public/image/profile.jpg";
 import dcom1 from "../../public/image/p3.jpg";
 import dcom2 from "../../public/image/p3.jpg";
 import dcom3 from "../../public/image/p3.jpg";
@@ -37,12 +37,12 @@ import phintnftwhitelist2 from "../../public/image/p3.jpg";
 import phitnft1 from "../../public/image/p3.jpg";
 import phitnft2 from "../../public/image/p3.jpg";
 import laptopPhone from "../../public/image/p3.jpg";
-import gamespeak1 from "../../public/image/p3.jpg";
-import gamespeak2 from "../../public/image/p3.jpg";
-import gamespeak3 from "../../public/image/p3.jpg";
-import gamespeak4 from "../../public/image/p3.jpg";
-import gamespeak5 from "../../public/image/p3.jpg";
-import gamespeak6 from "../../public/image/p3.jpg";
+import gamespeak1 from "../../public/image/profile.jpg";
+import gamespeak2 from "../../public/image/profile.jpg";
+import gamespeak3 from "../../public/image/profile.jpg";
+import gamespeak4 from "../../public/image/profile.jpg";
+import gamespeak5 from "../../public/image/profile.jpg";
+import gamespeak6 from "../../public/image/profile.jpg";
 
 
 

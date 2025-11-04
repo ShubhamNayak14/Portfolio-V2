@@ -16,7 +16,7 @@ export default function ProjectsPage() {
       <ProjectHore />
 
       <Project initFilterBy={initFilterBy} initFilterKey={initFilterKey} />
-      {/* <ComingSoon /> */}
+      <ComingSoon />
       <Coming/>
       <ScrollText text="Let'sconnect" className="" />
       <div className="w-full flex justify-center py-15  top-0 md:py-20">
