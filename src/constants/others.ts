@@ -1,47 +1,58 @@
 import { TProjectType } from "@/types";
 
 const ABOUT_NOTE = [
-	"Over the years I have spent time converting designs into",
-	"pixel-perfect,",
-	"performant,",
-	"accessible",
-	"and responsive applications/websites.",
-	"I have always been excited about the entire development spectrum,",
-	"so I frequently engage in backend.",
-	"Well what can I say,",
-	"I sincerely simply love working on ambitious projects with positive people",
-	"in a conducive work environment.",
+	,
 ];
 
 const CREDIT_NOTE = [
-	`I am not a "professional designer" by skill`,
-	`so in order to bring this portfolio's design to what
-	it is,`,
-	"I had to research,",
-	"draw inspiration",
-	"and also learn from what others have done.",
-	"For that I would like to acknowledge",
-	"works and people",
-	"who contributed to the design of this portfolio",
+,
 ];
 
 const PROJECT_NATURE: { key: TProjectType; label: string }[] = [
-	{
-		key: "Web Application",
-		label: "Web Application",
-	},
-	{
-		key: "Website",
-		label: "Website",
-	},
-	{
-		key: "Experiment",
-		label: "Experiment/Playful",
-	},
-	{
-		key: "Learn from Tutorial",
-		label: "Learn from Tutorial",
-	},
+    {
+        key: "Web Application",
+        label: "Web Application",
+    },
+    {
+        key: "Website",
+        label: "Website",
+    },
+    {
+        key: "Game",
+        label: "Game",
+    },
+    {
+        key: "Experiment",
+        label: "Experiment/Playful",
+    },
+    {
+        key: "Learn from Tutorial",
+        label: "Learn from Tutorial",
+    },
+    {
+        key: "Portfolio",
+        label: "Portfolio",
+    },
+    {
+        key: "UI/UX Design",
+        label: "UI/UX Design",
+    },
+    {
+        key: "UI Interaction Design",
+        label: "Interaction Design",
+    },
+    {
+        key: "UI Micro-interaction",
+        label: "Micro-interactions",
+    },
+    {
+        key: "Motion UI Design",
+        label: "Motion Design",
+    },
+    {
+        key: "Scroll Interaction Design",
+        label: "Scroll Interaction",
+    },
 ];
 
 const FOCUSABLE_ELEMENT_STRING =

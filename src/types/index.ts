@@ -2,8 +2,11 @@ import { StaticImageData } from "next/image";
 import TECH_STACKS from "@/constants/tech-stacks";
 
 type TRoles = "design" | "fe" | "be" | "teamlead";
-type TProjectType = "Web Application" | "Website" | "Learn from Tutorial" | "Experiment";
-type TFilterBy = "tech-stack" | "project-nature" | "open-source" | "closed-source";
+type TProjectType = "Web Application" | "Website" | "Learn from Tutorial" | "Experiment"|"Game"|"Portfolio"|"UI/UX Design"|"UI Interaction Design"
+  | "UI Micro-interaction"
+  | "Motion UI Design"
+  | "Scroll Interaction Design";
+type TFilterBy = "tech-stack" | "Web" | "UI/UX Design";
 type TProjectsView = "list" | "grid";
 type TLogoMode = "light" | "dark";
 type TProjectData = { currProject: TProject | null; nextProject: TProject | null; prevProject: TProject | null };

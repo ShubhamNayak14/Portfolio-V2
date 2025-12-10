@@ -52,8 +52,8 @@ export default function Page() {
       {/* Background Text */}
       <h1
         ref={bgRef}
-        style={{ fontFamily: "'Qualy', cursive" }}
-        className="absolute md:text-[18vw] text-7xl font-extrabold text-black dark:text-white opacity-10 leading-none select-none"
+        style={{ fontFamily: "'Noto Sans', cursive" }}
+        className="absolute md:text-[16vw] text-5xl font-extrabold text-black dark:text-white opacity-10 leading-none select-none"
       >
         PROJECT
       </h1>
@@ -61,8 +61,8 @@ export default function Page() {
 
       {/* Masked Foreground Section (fills full hero) */}
       <MaskContainer
-        size={60}
-        revealSize={480}
+        size={30}
+        revealSize={280}
         revealText={
           <h2 className="text-5xl font-bold text-black dark:text-white">
             Project Zone

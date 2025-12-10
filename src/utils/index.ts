@@ -49,7 +49,6 @@ function matchElement(origin: Element, destinationTag: string): Element | void {
 	if (origin.matches(destinationTag)) {
 		return origin;
 	}
-
 	if (!origin.parentElement) return;
 
 	if (origin.parentElement.matches(destinationTag)) {

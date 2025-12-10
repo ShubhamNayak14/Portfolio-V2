@@ -451,16 +451,16 @@ export default function Page({ initFilterBy, initFilterKey }: ProjectsPageProps)
 
           <ScrollTxt text="Projects" className="mt-10 lg:mt-0" />
 
-          <p className={styles.note}>
-            Note: Projects listed here are mainly freelance/personal projects
+          <p className={styles.note } >
+            Note: Projects listed here are mainly my personal projects 
           </p>
 
           <div className={styles.header}>
             <h2 ref={contentRef} className="text-gray-800 dark:text-gray-200">
               Viewing{" "}
-              <span className="text-blue-600 dark:text-indigo-400 font-semibold transition-colors duration-300">
-                {currProjects}
-              </span>{" "}
+<strong className="text-orange-600 dark:text-orange-400 font-bold mx-1">
+    {currProjects}
+  </strong>{" "}
               projects
             </h2>
             <ProjectsViewSelector

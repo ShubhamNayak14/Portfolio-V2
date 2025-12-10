@@ -344,7 +344,7 @@ const events = {
   },
 };
 
-// ✅ Type-safe registerEvent
+// Type-safe registerEvent
 function registerEvent({
   label,
   parameters = {},

@@ -32,7 +32,7 @@ export default function ProjectModal({
 						onGoToProject={onGoToProject}
 					/>
 				</div>
-				<div className={styles.gradient}></div>
+				{/* <div className={styles.gradient}></div> */}
 				{/* <Noise /> */}
 			</div>
 		</ModalWrapper>

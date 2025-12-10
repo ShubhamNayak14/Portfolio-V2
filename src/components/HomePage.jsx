@@ -89,7 +89,7 @@ const HomePage = ({ isLoaded = false }) => {
           .from(layers.shubham.current, { x: 100, opacity: 0 }, "-=0.8")
           .from(layers.navbar.current, { y: -50, opacity: 0 }, "-=0.8");
 
-        // ✨ ScrollTrigger Background Animation
+        // ScrollTrigger Background Animation
         gsap.to(layers.backgroundText.current, {
           scale: 1.5,
           opacity: 0.05,
@@ -154,7 +154,7 @@ const HomePage = ({ isLoaded = false }) => {
               ref={layers.photo}
               src="image/profile.jpg"
               alt="Shubham"
-              className="w-[clamp(120px,16vw,160px)] h-[clamp(40px,6vw,80px)] rounded-2xl"
+              className="w-[clamp(120px,16vw,160px)] h-[clamp(40px,6vw,80px)] rounded-4xl"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             />
@@ -177,7 +177,9 @@ const HomePage = ({ isLoaded = false }) => {
         <p ref={(el) => (taglineRefs.current[0] = el)}>
           Where{" "}
           <Highlighter action="highlight" color="#FF9800">
-            Ideas
+            <span className="px-6">
+    Ideas
+  </span>
           </Highlighter>{" "}
           Meet{" "}
           <Highlighter action="underline" color="#ff9800">

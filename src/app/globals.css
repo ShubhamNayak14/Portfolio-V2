@@ -1,6 +1,3 @@
-
-
-
 /* ---------------------------------------------------- */
 /* 🧩 Tailwind & Animations */
 /* ---------------------------------------------------- */
@@ -160,6 +157,12 @@
 }
 
 @font-face {
+  font-family: 'Noto Sans'; 
+  src: url('/fonts/Noto Sans.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'goodly';
   src: url('/fonts/goodly.otf') format('opentype');
   font-display: swap;
@@ -218,7 +221,12 @@ body::-webkit-scrollbar {
   color: var(--black);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "sf-pro-bold";
 }
 
@@ -237,9 +245,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes typewriter {
-  0% { width: 0; }
-  50% { width: 100%; }
-  100% { width: 0; }
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
 }
 
 .animate-typewriter {
@@ -250,8 +266,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes blink {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
+
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
 }
 
 .animate-blink {
@@ -263,9 +288,15 @@ h1, h2, h3, h4, h5, h6 {
 
 @theme inline {
   --animate-move: move 5s linear infinite;
+
   @keyframes move {
-    0% { transform: translateX(-200px); }
-    100% { transform: translateX(200px); }
+    0% {
+      transform: translateX(-200px);
+    }
+
+    100% {
+      transform: translateX(200px);
+    }
   }
 }
 
@@ -281,11 +312,15 @@ h1, h2, h3, h4, h5, h6 {
   scrollbar-width: none;
 }
 
-body, button, a, div {
+body,
+button,
+a,
+div {
   cursor: url('/image/cursor.png') 4 4, auto;
 }
 
-.item, a {
+.item,
+a {
   cursor: pointer;
 }
 
@@ -297,5 +332,3 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
-

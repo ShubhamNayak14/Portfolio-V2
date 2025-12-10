@@ -62,7 +62,7 @@ const ExternalLink = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="icon icon-tabler icon-tabler-external-link w-[22px] h-[20px] stroke-gray-500 dark:stroke-gray-100"
+      className="icon icon-tabler icon-tabler-external-link w-[22px] h-[20px] stroke-gray-100"
       viewBox="0 0 24 24"
       strokeWidth="1.5"
       fill="none"

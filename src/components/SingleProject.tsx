@@ -11,7 +11,6 @@ import Slider from "@/shared/slider";
 import { fetchProjects } from "@/utils";
 import { Ref } from "react";
 import TECH_STACKS from "@/constants/tech-stacks";
-import ROLES from "@/constants/others";
 import { events, registerEvent } from "@/utils/analytics/events";
 import ComingSoon from "@/components/ComingSoon";
 
@@ -92,7 +91,6 @@ export default function SingleProject({
     title,
     details,
     tech,
-    roles,
     githublink,
     sitelink,
     media,
@@ -108,7 +106,7 @@ export default function SingleProject({
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
             {title}
           </h1>
-      <ComingSoon />
+      {/* <ComingSoon /> */}
 
       <button
         onClick={onClose}
@@ -132,13 +130,13 @@ export default function SingleProject({
             <Slider
               items={media}
               id={currProjectId}
-              bgColor={bgColor || "#86868b"}
+              bgColor={ "#000"}
             />
           ) : (
             <SingleMediaFile
               file={media[0]}
               title={title}
-              bgColor={bgColor || "#86868b"}
+              bgColor={bgColor || "#000"}
             />
           )}
         </div>
@@ -153,25 +151,12 @@ export default function SingleProject({
             dangerouslySetInnerHTML={{ __html: details }}
           />
 
-          {roles?.length > 0 && (
-            <div className="mt-6">
-              <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">
-                {roles.length === 1 ? "Role" : "Roles"} in Project
-              </h3>
-              <ul className="list-disc text-lg ml-6 mt-2 text-gray-600 dark:text-gray-400 space-y-1">
-                {roles.map((item, i) => {
-                  const roleInfo =
-                    ROLES.ROLES[item as keyof (typeof ROLES)["ROLES"]];
-                  return <li key={i}>{roleInfo?.label || item}</li>;
-                })}
-              </ul>
-            </div>
-          )}
+       
 
           {responsibilities?.length > 0 && (
             <div className="mt-6">
               <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">
-                My Responsibilities & Features I Implemented
+               Features & Implemented
               </h3>
               <div
                 className="mt-2 text-gray-600 dark:text-gray-400 leading-relaxed text-lg"

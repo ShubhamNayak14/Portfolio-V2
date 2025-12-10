@@ -59,7 +59,7 @@ export function Preloader() {
             initial='initial'
             animate='enter'
           >
-            <Dot size={48} className='me-3' />
+            {/* <Dot size={48} className='me-3' /> */}
             <p>{preloaderWords[index]}</p>
           </MotionComponent>
           <motion.svg className='absolute top-0 -z-10 h-[calc(100%+300px)] w-full'>
