@@ -256,7 +256,6 @@
 //   };
 // }
 
-
 "use client";
 
 import React from "react";
@@ -364,15 +363,18 @@ export default function Page({ initFilterBy, initFilterKey }: ProjectsPageProps)
     registerEvent(events.pages.projects.toggleProjectsFilterBy({ filter_by: selected }));
   };
 
+  // --- FIXED: Logic for Filter List ---
   let filterList: { key: string; label: string }[] = [];
   let currProjects = "All";
 
-  if (filterBy === "project-nature") {
-    filterList = [{ key: "all", label: "All" }, ...PROJECT_NATURE];
-    currProjects = PROJECT_NATURE.find((item) => item.key === filterKey)?.label || "All";
-  } else {
+  if (filterBy === "tech-stack") {
     filterList = [{ key: "all", label: "All" }, ...Object.values(TECH_STACKS)];
     currProjects = TECH_STACKS[filterKey as keyof typeof TECH_STACKS]?.label || "All";
+  } else {
+    // If filterBy is "Web" or "UI/UX Design", we treat the category itself as the label
+    // and we don't need a secondary filter list (or it stays empty/all)
+    currProjects = filterBy;
+    filterList = [{ key: "all", label: "All" }];
   }
 
   const onFilterProjects = ({ key }: { key: string }) => {
@@ -380,6 +382,7 @@ export default function Page({ initFilterBy, initFilterKey }: ProjectsPageProps)
     setFilterKey(key as keyof typeof TECH_STACKS | TProjectType | "all");
   };
 
+  // --- FIXED: Logic for Displaying Projects ---
   let displayedProjects = PROJECTS;
 
   if (filterBy === "tech-stack") {
@@ -389,37 +392,16 @@ export default function Page({ initFilterBy, initFilterKey }: ProjectsPageProps)
         : PROJECTS.filter((project) =>
             project.tech.includes(filterKey as keyof typeof TECH_STACKS)
           );
+  } else {
+    // Logic for "Web" | "UI/UX Design"
+    // Since these are direct types in your TFilterBy, we filter projects that match this type.
+    // We cast filterBy to string for comparison if project.type is loosely typed, 
+    // or if project.type matches the TFilterBy strings exactly.
+    displayedProjects = PROJECTS.filter((project) => project.type === filterBy);
   }
 
-  if (filterBy === "project-nature") {
-    displayedProjects =
-      filterKey === "all"
-        ? PROJECTS
-        : PROJECTS.filter((project) => project.type === filterKey);
-  }
-
-  if (filterBy === "open-source") {
-    displayedProjects =
-      filterKey === "all"
-        ? PROJECTS.filter((p) => p.githublink && p.githublink.length > 0)
-        : PROJECTS.filter(
-            (p) =>
-              p.githublink &&
-              p.githublink.length > 0 &&
-              p.tech.includes(filterKey as keyof typeof TECH_STACKS)
-          );
-  }
-
-  if (filterBy === "closed-source") {
-    displayedProjects =
-      filterKey === "all"
-        ? PROJECTS.filter((p) => !p.githublink || p.githublink.length === 0)
-        : PROJECTS.filter(
-            (p) =>
-              (!p.githublink || p.githublink.length === 0) &&
-              p.tech.includes(filterKey as keyof typeof TECH_STACKS)
-          );
-  }
+  // NOTE: Removed "project-nature", "open-source", and "closed-source" blocks
+  // because TFilterBy = "tech-stack" | "Web" | "UI/UX Design" does not allow them.
 
   useIsomorphicLayoutEffect(() => {
     if (!initialPageLoad) {
@@ -451,16 +433,16 @@ export default function Page({ initFilterBy, initFilterKey }: ProjectsPageProps)
 
           <ScrollTxt text="Projects" className="mt-10 lg:mt-0" />
 
-          <p className={styles.note } >
-            Note: Projects listed here are mainly my personal projects 
+          <p className={styles.note}>
+            Note: Projects listed here are mainly my personal projects
           </p>
 
           <div className={styles.header}>
             <h2 ref={contentRef} className="text-gray-800 dark:text-gray-200">
               Viewing{" "}
-<strong className="text-orange-600 dark:text-orange-400 font-bold mx-1">
-    {currProjects}
-  </strong>{" "}
+              <strong className="text-orange-600 dark:text-orange-400 font-bold mx-1">
+                {currProjects}
+              </strong>{" "}
               projects
             </h2>
             <ProjectsViewSelector

@@ -1,11 +1,11 @@
 import { TProjectType } from "@/types";
 
 const ABOUT_NOTE = [
-	,
+    "This is a note about the project.",
 ];
 
 const CREDIT_NOTE = [
-,
+    "Shubham Nayak || Designed by Me.",
 ];
 
 const PROJECT_NATURE: { key: TProjectType; label: string }[] = [
